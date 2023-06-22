@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Ensure your account is using a long, random password to stay secure.') }}
+            {{ __('Ensure your account is using a long, random password to stay secure. The password must be at least 8 characters long.') }}
         </p>
     </header>
 
@@ -35,6 +35,7 @@
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
+                <script>alert('Password updated.');</script>
                 <p
                     x-data="{ show: true }"
                     x-show="show"
