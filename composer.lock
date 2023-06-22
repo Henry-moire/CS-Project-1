@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cf9773f9d68b0b63a92d2b0cbadaa9d1",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "laraveldaily/larastarters",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelDaily/Larastarters.git",
+                "reference": "d8d9feda435978453bb8414bcd83c6ddaa971f65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelDaily/Larastarters/zipball/d8d9feda435978453bb8414bcd83c6ddaa971f65",
+                "reference": "d8d9feda435978453bb8414bcd83c6ddaa971f65",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelDaily\\Larastarters\\LarastartersServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelDaily\\Larastarters\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Povilas Korop",
+                    "email": "povilas@laraveldaily.com"
+                }
+            ],
+            "description": "Laravel Starter Kits with extra functions",
+            "support": {
+                "issues": "https://github.com/LaravelDaily/Larastarters/issues",
+                "source": "https://github.com/LaravelDaily/Larastarters/tree/2.3.1"
+            },
+            "time": "2023-03-17T06:22:06+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
