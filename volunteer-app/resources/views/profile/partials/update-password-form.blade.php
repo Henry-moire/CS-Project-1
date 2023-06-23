@@ -24,6 +24,11 @@
             <x-text-input id="password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
+        <div>
+            <p id="passwordHelpBlock" class="form-text text-muted">
+                Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 special character.
+            </p>
+        </div>
 
         <div>
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
