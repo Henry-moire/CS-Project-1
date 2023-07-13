@@ -8,11 +8,6 @@
 
 > A website aimed at improving volunteerism by simplifying the process of volunteering.
 
-## Install
-
-```sh
-npm install
-```
 
 ## Author
 
@@ -20,9 +15,4 @@ npm install
 
 * Github: [@Henry-moire](https://github.com/Henry-moire)
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
