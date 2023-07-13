@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
-class AuthenticatedSessionController extends Controller
+class  AuthenticatedSessionController extends Controller
 {
     /**
      * Display the login view.
@@ -29,7 +29,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $url ='';
+        if ($request->user()->role === 'admin') {
+            $url = 'admin/dashboard';
+        } else if ($request->user()->role === 'organization') {
+            $url = 'organization/dashboard';
+        }else if ($request->user()->role === 'user') {
+            $url = '/dashboard';
+        }
+
+        return redirect()->intended($url);
     }
 
     /**

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrganizationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +32,17 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// middleware for rerouting url
+Route::middleware(['auth','role:admin'])->group(function() {
+    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->
+    name('admin.dashboard');
+});
+
+Route::middleware(['auth','role:organization'])->group(function() {
+    Route::get('/organization/dashboard', [OrganizationController::class, 'OrganizationDashboard'])->
+    name('organization.dashboard');
+});
+
+
+
