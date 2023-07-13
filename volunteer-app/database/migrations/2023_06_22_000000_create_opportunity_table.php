@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('individual_user', function (Blueprint $table) {
+        Schema::create('opportunity', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('contact');
+            $table->date('date');
+            $table->string('location');
+            $table->string('tags');
+            $table->string('schedule');
             $table->string('skills');
+            $table->string('requirements');
+            $table->smallInteger('no_of_volunteers_needed');
+            $table->smallInteger('no_of_volunteers_assigned');
+            $table->boolean('started');
             $table->timestamp('created_at')->nullable();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('individual_user');
+        Schema::dropIfExists('user_roles');
     }
 };
