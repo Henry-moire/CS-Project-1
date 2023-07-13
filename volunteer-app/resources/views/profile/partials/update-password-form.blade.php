@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Ensure your account is using a long, random password to stay secure. The password must be at least 8 characters long.') }}
+            {{ __('Ensure your account is using a long, random password to stay secure.') }}
         </p>
     </header>
 
@@ -24,11 +24,6 @@
             <x-text-input id="password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
-        <div>
-            <p id="passwordHelpBlock" class="form-text text-muted">
-                Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 special character.
-            </p>
-        </div>
 
         <div>
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
@@ -40,7 +35,6 @@
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
-                <script>alert('Password updated.');</script>
                 <p
                     x-data="{ show: true }"
                     x-show="show"

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrganizationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::group(['middleware' => 'prevent-back-history'],function(){
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,4 +33,26 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-}); // prevent back middleware
+// middleware for rerouting url
+//Admin Dashboard
+
+Route::middleware(['auth','role:admin'])->group(function() {
+    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->
+    name('admin.dashboard');
+
+    Route::get('/admin/logout', [AdminController::class, 'AdminDestroy'])->
+    name('admin.logout');
+
+    Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->
+    name('admin.profile');
+});
+
+//Vendor Dashboard
+
+Route::middleware(['auth','role:organization'])->group(function() {
+    Route::get('/organization/dashboard', [OrganizationController::class, 'OrganizationDashboard'])->
+    name('organization.dashboard');
+});
+
+Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
+
