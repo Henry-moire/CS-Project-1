@@ -34,10 +34,14 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // middleware for rerouting url
+//Admin Dashboard
+
 Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->
     name('admin.dashboard');
 });
+
+//Vendor Dashboard
 
 Route::middleware(['auth','role:organization'])->group(function() {
     Route::get('/organization/dashboard', [OrganizationController::class, 'OrganizationDashboard'])->
