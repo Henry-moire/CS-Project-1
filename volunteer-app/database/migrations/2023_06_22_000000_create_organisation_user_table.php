@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('sector');
+            $table->string('contact');
+            $table->smallInteger('no_of_completed_events');
             $table->timestamp('created_at')->nullable();
         });
     }
