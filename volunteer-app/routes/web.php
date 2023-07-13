@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'prevent-back-history'],function(){
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,5 +29,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-}); // prevent back middleware
