@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Opportunity;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -32,27 +32,24 @@ class RegisterOpportunityController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'date' => ['required', 'string', 'max:255'],
+            'date' => ['required', 'date', 'max:255'],
             'location' => ['required', 'string', 'max:255'],
             'tags' => ['required', 'string', 'max:255'],
             'schedule' => ['required', 'string', 'max:255'],
             'skills' => ['required', 'string', 'max:255'],
             'requirements' => ['required', 'string', 'max:255'],
-            'no_of_volunteers_needed' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'no_of_volunteers_needed' => ['required', 'int', 'max:255'],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+        $opportunity = Opportunity::create([
+            'title' => $request->title,
+            'date' => $request->date,
+            'location' => $request->location,
+            'tags' => $request->tags,
+            'schedule' => $request->schedule,
+            'skills' => $request->skills,
+            'requirements' => $request->requirements,
+            'no_of_volunteers_needed' => $request->no_of_volunteers_needed,
         ]);
-
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
     }
 }

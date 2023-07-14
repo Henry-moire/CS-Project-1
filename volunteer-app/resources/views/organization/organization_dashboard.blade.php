@@ -1,5 +1,5 @@
 <x-app-layout>
-<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('create-opportunity') }}">
         @csrf
 
         <!-- Name -->
@@ -47,12 +47,11 @@
 
         <div>
             <x-input-label for="no_of_volunteers_needed" :value="__('Number of volunteers needed')" />
-            <x-text-input id="no_of_volunteers_needed" class="block mt-1" type="int" name="no_of_volunteers_needed" :value="old('no_of_volunteers_needed')" required autofocus autocomplete="no_of_volunteers_needed" />
+            <x-text-input id="no_of_volunteers_needed" class="block mt-1" type="text" name="no_of_volunteers_needed" :value="old('no_of_volunteers_needed')" required autofocus autocomplete="no_of_volunteers_needed" />
             <x-input-error :messages="$errors->get('no_of_volunteers_needed')" class="mt-2" />
         </div>
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
+        <x-primary-button class="ml-4">
+                {{ __('Register Opportunity') }}
+        </x-primary-button>
     </form>
 </x-app-layout>
