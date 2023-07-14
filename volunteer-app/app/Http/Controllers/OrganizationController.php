@@ -10,5 +10,4 @@ class OrganizationController extends Controller
         return view('organization.organization_dashboard');
     } // end Method
 
-
 }

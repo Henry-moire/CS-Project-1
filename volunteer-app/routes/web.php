@@ -49,8 +49,11 @@ Route::middleware(['auth','role:admin'])->group(function() {
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->
     name('admin.profile.store');
 
-    Route::post('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->
+    Route::get('/admin/change/password', [AdminController::class, 'AdminUpdatePassword'])->
     name('admin.change.password');
+
+    Route::post('/admin/update/password', [AdminController::class, 'AdminChangePassword'])->
+    name('update.password');
 });
 
 //Vendor Dashboard
@@ -58,6 +61,7 @@ Route::middleware(['auth','role:admin'])->group(function() {
 Route::middleware(['auth','role:organization'])->group(function() {
     Route::get('/organization/dashboard', [OrganizationController::class, 'OrganizationDashboard'])->
     name('organization.dashboard');
+
 });
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
