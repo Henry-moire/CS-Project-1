@@ -56,3 +56,9 @@ Route::middleware(['auth','role:organization'])->group(function() {
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
 
+//Opportunities
+
+Route::get('/create-opportunity', function () {
+    return view('create-opportunity');
+});
+
