@@ -18,4 +18,5 @@ class Opportunity extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [];
+    public $timestamps = false;
 }
