@@ -51,5 +51,6 @@ class RegisterOpportunityController extends Controller
             'requirements' => $request->requirements,
             'no_of_volunteers_needed' => $request->no_of_volunteers_needed,
         ]);
+        return redirect(RouteServiceProvider::HOME);
     }
 }
