@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\Auth\RegisterOpportunityController;
 
 
 /*
@@ -66,3 +67,9 @@ Route::middleware(['auth','role:organization'])->group(function() {
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
 
+//Opportunities
+/*
+Route::post('/create-opportunity', function () {
+    return view('create-opportunity');
+});
+*/
