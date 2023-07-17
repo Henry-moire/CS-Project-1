@@ -63,7 +63,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="post" action="{{ route('admin.profile.store') }}"
+                                <form method="post" action="{{ route('organization.profile.store') }}"
                                       enctype="multipart/form-data" >
                                     @csrf
 
@@ -109,15 +109,22 @@
                                             <h6 class="mb-0">Organization Join Date</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select name="organization_join" class="form-select mb-3" aria-label="Default select example">
                                                 <option selected="">Open this select menu</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
-                                                <option value="2024">2024</option>
-                                                <option value="2025">2025</option>
-                                                <option value="2026">2026</option>
-                                                <option value="2027">2027</option>
+                            <option value="2021" {{ $organizationData->organization_join == 2021 ? 'selected' : '' }}
+                            >2021</option>
+                            <option value="2022" {{ $organizationData->organization_join == 2022 ? 'selected' : '' }}
+                            >2022</option>
+                            <option value="2023" {{ $organizationData->organization_join == 2023 ? 'selected' : '' }}
+                            >2023</option>
+                            <option value="2024" {{ $organizationData->organization_join == 2024 ? 'selected' : '' }}
+                            >2024</option>
+                            <option value="2025" {{ $organizationData->organization_join == 2025 ? 'selected' : '' }}
+                            >2025</option>
+                            <option value="2026" {{ $organizationData->organization_join == 2026 ? 'selected' : '' }}
+                            >2026</option>
+                            <option value="2027" {{ $organizationData->organization_join == 2027 ? 'selected' : '' }}
+                            >2027</option>
                                             </select>
                                         </div>
                                     </div>
@@ -127,8 +134,10 @@
                                             <h6 class="mb-0">Organization Info</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <textarea class="form-control" id="inputAddress2"
-                                            placeholder="Address 2..." rows="3"></textarea>
+                                            <textarea name="organization_short_info" class="form-control" id="inputAddress2"
+                                            placeholder="Organization Info ..." rows="3">
+                                                {{ $organizationData->organization_short_info }}
+                                            </textarea>
                                         </div>
                                     </div>
 
