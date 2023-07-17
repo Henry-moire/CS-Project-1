@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('organization/create/opportunity', [RegisterOpportunityController::class, 'CreateOpportunity'])
             ->name('create_opportunity');
 
-Route::post('organization/store/opportunity', [RegisterOpportunityController::class, 'store'])
+Route::post('organization/store/opportunity', [RegisterOpportunityController::class, 'StoreOpportunity'])
             ->name('store_opportunity');
 
 Route::middleware('guest')->group(function () {
