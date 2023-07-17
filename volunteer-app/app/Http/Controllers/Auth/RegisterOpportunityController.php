@@ -18,7 +18,7 @@ class RegisterOpportunityController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function CreateOpportunity()
     {
         return view('organization.create_opportunity');
     }
@@ -28,7 +28,7 @@ class RegisterOpportunityController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function StoreOpportunity(Request $request): RedirectResponse
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
