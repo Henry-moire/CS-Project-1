@@ -50,7 +50,7 @@ class RegisterOpportunityController extends Controller
             'skills' => $request->skills,
             'requirements' => $request->requirements,
             'no_of_volunteers_needed' => $request->no_of_volunteers_needed,
-            'creator_id' => $_SESSION["id"],
+            'creator_id' => 'id',
         ]);
         return redirect('/organization/dashboard');
     }
