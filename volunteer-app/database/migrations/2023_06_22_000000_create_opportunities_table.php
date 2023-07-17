@@ -14,15 +14,16 @@ return new class extends Migration
         Schema::create('opportunities', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->date('date')->nullable();;
-            $table->string('location')->nullable();;
-            $table->string('tags')->nullable();;
-            $table->string('schedule')->nullable();;
-            $table->string('skills')->nullable();;
-            $table->string('requirements')->nullable();;
-            $table->smallInteger('no_of_volunteers_needed')->nullable();;
-            $table->smallInteger('no_of_volunteers_assigned')->nullable();;
-            $table->boolean('started')->nullable();;
+            $table->date('date')->nullable();
+            $table->string('location')->nullable();
+            $table->string('tags')->nullable();
+            $table->string('schedule')->nullable();
+            $table->string('skills')->nullable();
+            $table->string('requirements')->nullable();
+            $table->smallInteger('no_of_volunteers_needed')->nullable();
+            $table->smallInteger('no_of_volunteers_assigned')->nullable();
+            $table->boolean('started')->nullable();
+            $table->string('creator_id')->nullable();
         });
     }
 
