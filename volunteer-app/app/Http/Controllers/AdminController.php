@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function AdminDashboard(){
+    public function AdminDashboard()
+    {
         return view('admin.index');
     } // End Method
 
-    public function AdminLogin(){
+    public function AdminLogin()
+    {
         return view('admin.admin_login');
     }
 
@@ -29,15 +31,16 @@ class AdminController extends Controller
         return redirect('/admin/login');
     } // End method
 
-    public function AdminProfile ()
+    public function AdminProfile()
     {
         $id = Auth::user()->id;
         $adminData = User::find($id);
-        return view('admin.admin_profile_view',compact('adminData'));
+        return view('admin.admin_profile_view', compact('adminData'));
 
     } // End method
 
-    public function AdminProfileStore (Request $request){
+    public function AdminProfileStore(Request $request)
+    {
         $id = Auth::user()->id;
         $data = User::find($id);
         $data->name = $request->name;
@@ -45,11 +48,11 @@ class AdminController extends Controller
         $data->phone = $request->phone;
         $data->address = $request->address;
 
-        if($request->file('photo')){
+        if ($request->file('photo')) {
             $file = $request->file('photo');
-            @unlink(public_path('upload/admin_images'.$data->photo));
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'),$filename);
+            @unlink(public_path('upload/admin_images' . $data->photo));
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'), $filename);
             $data['photo'] = $filename;
         }
 
@@ -64,28 +67,30 @@ class AdminController extends Controller
 
     } // End method
 
-    public function AdminChangePassword(){
+    public function AdminChangePassword()
+    {
         return view('admin.admin_change_password');
     } // End method
 
     public function AdminUpdatePassword(Request $request){
-        //validation
+        // Validation
         $request->validate([
             'old_password' => 'required',
             'new_password' => 'required|confirmed',
         ]);
 
-        // Matching the old to new password
-        if( !Hash::check($request->old_password, auth::user()->password)) {
-            return back()->with("error", "Old Password Doesn't Match New Password!");
+        // Match The Old Password
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+            return back()->with("error", "Old Password Doesn't Match!!");
         }
 
         // Update The new password
-        User::whereId(auth()->user->id)->update([
+        User::whereId(auth()->user()->id)->update([
             'password' => Hash::make($request->new_password)
-        ]);
-        return back()->with("status", "Password Changed Successfully!");
 
-    } // End method
+        ]);
+        return back()->with("status", " Password Changed Successfully");
+
+    } // End Mehtod
 
 }

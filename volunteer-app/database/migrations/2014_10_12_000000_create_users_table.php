@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
+            $table->string('organization_join')->nullable();
+            $table->text('organization_short_info')->nullable();
             $table->enum('role',['admin','organization','user'])->default('user');
             $table->enum('status',['active','inactive'])->default('active');
             $table->rememberToken();
