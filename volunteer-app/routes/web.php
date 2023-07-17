@@ -36,6 +36,7 @@ use App\Http\Controllers\User\StripeController;
 use App\Http\Controllers\User\AllUserController;
 
 use App\Http\Controllers\User\ReviewController;
+use App\Http\Controllers\OpportunitiesController;
 
 
 /*
@@ -52,6 +53,8 @@ use App\Http\Controllers\User\ReviewController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('opportunities', [OpportunitiesController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
