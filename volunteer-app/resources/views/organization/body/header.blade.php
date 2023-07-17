@@ -324,12 +324,12 @@
             </div>
             @php
                 $id = Auth::user()->id;
-                $adminData = App\Models\User::find($id);
+                $organizationData = App\Models\User::find($id);
             @endphp
 
             <div class="user-box dropdown">
                 <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ asset(!empty($adminData->photo)) ? url('upload/admin_images/'.$adminData->photo)
+                    <img src="{{ asset(!empty($organizationData->photo)) ? url('upload/organization_images/'.$organizationData->photo)
                     :url('upload/no_image.jpg') }}"
 
                          class="user-img" alt="user avatar">
@@ -343,7 +343,7 @@
                             <i class="bx bx-user"></i><span>Profile</span></a>
                     </li>
 
-                    <li><a class="dropdown-item" href="{{ route('admin.change.password') }}">
+                    <li><a class="dropdown-item" href="{{ route('organization.change.password') }}">
                             <i class="bx bx-cog"></i><span>Change Password</span></a>
                     </li>
 

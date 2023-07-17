@@ -103,6 +103,12 @@ Route::middleware(['auth','role:organization'])->group(function() {
     Route::post('/organization/profile/store', [OrganizationController::class, 'OrganizationProfileStore'])->
     name('organization.profile.store');
 
+    Route::get('/organization/change/password', [OrganizationController::class, 'OrganizationChangePassword'])->
+    name('organization.change.password');
+
+    Route::post('/organization/update/password', [OrganizationController::class, 'OrganizationUpdatePassword'])->
+    name('organization.update.password');
+
 
 });
 /*
