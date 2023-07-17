@@ -18,7 +18,7 @@ class RegisterOpportunityController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function CreateOpportunity()
     {
         return view('organization.create_opportunity');
     }

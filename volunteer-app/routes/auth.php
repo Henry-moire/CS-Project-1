@@ -12,7 +12,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\RegisterOpportunityController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('organization/create/opportunity', [RegisterOpportunityController::class, 'create'])
+Route::get('organization/create/opportunity', [RegisterOpportunityController::class, 'CreateOpportunity'])
             ->name('create_opportunity');
 
 Route::post('organization/store/opportunity', [RegisterOpportunityController::class, 'store'])
