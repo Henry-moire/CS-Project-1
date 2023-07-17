@@ -20,7 +20,7 @@ class RegisterOpportunityController extends Controller
      */
     public function create(): View
     {
-        return view('organization.organization_dashboard');
+        return view('organization.create_opportunity');
     }
 
     /**
@@ -51,6 +51,6 @@ class RegisterOpportunityController extends Controller
             'requirements' => $request->requirements,
             'no_of_volunteers_needed' => $request->no_of_volunteers_needed,
         ]);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/organization/dashboard');
     }
 }
