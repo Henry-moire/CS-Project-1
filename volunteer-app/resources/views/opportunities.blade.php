@@ -1,34 +1,3 @@
-<h1>Opportunities list</h1>
-
-<table border = "1">
-  <tr>
-    <td>id</td>
-    <td>title</td>
-    <td>date</td>
-    <td>location</td>
-    <td>tags</td>
-    <td>schedule</td>
-    <td>skills</td>
-    <td>requirements</td>
-    <td>no_of_volunteers_needed</td>
-    <td>no_of_volunteers_assigned</td>
-  </tr>
-  @foreach($opportunities as $opportunities)
-  <tr>
-    <td>{{$opportunities['id']}}</td>
-    <td>{{$opportunities['title']}}</td>
-    <td>{{$opportunities['date']}}</td>
-    <td>{{$opportunities['location']}}</td>
-    <td>{{$opportunities['tags']}}</td>
-    <td>{{$opportunities['schedule']}}</td>
-    <td>{{$opportunities['skills']}}</td>
-    <td>{{$opportunities['requirements']}}</td>
-    <td>{{$opportunities['no_of_volunteers_needed']}}</td>
-    <td>{{$opportunities['no_of_volunteers_assigned']}}</td>
-  </tr>
-  @endforeach
-</table>
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
@@ -43,7 +12,7 @@
 
                     <div class="mt-1 mb-4">
                         <div class="relative max-w-xs">
-                            <form action="{{ route('users.search') }}" method="GET">
+                            <form action="{{ route('opportunities.search') }}" method="GET">
                                 <label for="search" class="sr-only">
                                     Search
                                 </label>
@@ -67,36 +36,78 @@
                                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
-                                        #
+                                        Title
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Name
+                                        Date
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Email
+                                        Location
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Tags
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Schedule
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Skills
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Requirements
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        No. of volunteers needed
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        No. of volunteers assigned
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($opportunities as $opportunity)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                        {{$user->id}}
-                                    </th>
                                     <td class="px-6 py-4">
-                                        {{$user->name}}
+                                        {{$opportunity->title}}
 
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{$user->email}}
+                                        {{$opportunity->date}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->location}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->tags}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->schedule}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->skills}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->requirements}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->no_of_volunteers_needed}}
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{$opportunity->no_of_volunteers_assigned}}
 
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $users->links() }}
+                        {{ $opportunities->links() }}
                     </div>
 
                 </div>

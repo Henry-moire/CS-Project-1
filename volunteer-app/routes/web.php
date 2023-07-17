@@ -54,7 +54,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('opportunities', [OpportunitiesController::class, 'show']);
+Route::get('opportunities', [OpportunitiesController::class, 'index']) -> name('opportunities.search');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
