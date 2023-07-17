@@ -12,10 +12,11 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\RegisterOpportunityController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('create-opportunity', [RegisterOpportunityController::class, 'create'])
-            ->name('create-opportunity');
+Route::get('organization/create/opportunity', [RegisterOpportunityController::class, 'CreateOpportunity'])
+            ->name('create_opportunity');
 
-Route::post('create-opportunity', [RegisterOpportunityController::class, 'store']);
+Route::post('organization/store/opportunity', [RegisterOpportunityController::class, 'StoreOpportunity'])
+            ->name('store_opportunity');
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])

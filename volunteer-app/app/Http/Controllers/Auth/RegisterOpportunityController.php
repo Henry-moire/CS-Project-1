@@ -18,9 +18,9 @@ class RegisterOpportunityController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function CreateOpportunity()
     {
-        return view('organization.organization_dashboard');
+        return view('organization.create_opportunity');
     }
 
     /**
@@ -28,7 +28,7 @@ class RegisterOpportunityController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function StoreOpportunity(Request $request): RedirectResponse
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
@@ -51,6 +51,6 @@ class RegisterOpportunityController extends Controller
             'requirements' => $request->requirements,
             'no_of_volunteers_needed' => $request->no_of_volunteers_needed,
         ]);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/organization/dashboard');
     }
 }
