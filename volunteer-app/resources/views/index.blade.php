@@ -35,6 +35,9 @@
                                         <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="{{ route('opportunities.search') }}" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>View Opportunities</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" id="change-password-tab" data-bs-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="true"><i class="fi-rs-user mr-10"></i>Change Password</a>
                                     </li>
                                     <li class="nav-item">
