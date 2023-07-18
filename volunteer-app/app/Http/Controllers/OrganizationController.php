@@ -115,18 +115,18 @@ class OrganizationController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'vendor_join' => $request->vendor_join,
+            'organization_join' => $request->organization_join,
             'password' => Hash::make($request->password),
-            'role' => 'vendor',
+            'role' => 'organization',
             'status' => 'inactive',
         ]);
 
         $notification = array(
-            'message' => 'Vendor Registered Successfully',
+            'message' => 'Organization Registered Successfully',
             'alert-type' => 'success'
         );
 
-        return redirect()->route('vendor.login')->with($notification);
+        return redirect()->route('organization.login')->with($notification);
 
     }// End Method
 

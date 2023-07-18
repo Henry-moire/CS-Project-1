@@ -53,10 +53,6 @@
                                             <input type="text" id="name" required="" name="name" placeholder="Shop Name" />
                                         </div>
 
-                                        <div class="form-group">
-                                            <input type="text" id="username" required="" name="username" placeholder="User Name" />
-                                        </div>
-
 
                                         <div class="form-group">
                                             <input type="email"  id="email" required="" name="email" placeholder="Email" />
@@ -68,7 +64,7 @@
 
 
                                         <div class="form-group">
-                                            <select name="vendor_join" class="form-select mb-3" aria-label="Default select example">
+                                            <select name="organization_join" class="form-select mb-3" aria-label="Default select example">
                                                 <option selected="">Open this select Join Date</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2023">2023</option>
