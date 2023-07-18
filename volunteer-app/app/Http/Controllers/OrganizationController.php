@@ -99,4 +99,39 @@ class OrganizationController extends Controller
 
     } // End Method
 
+    public function BecomeVendor(){
+        return view('auth.become_vendor');
+    } // End Method
+
+    public function VendorRegister(Request $request) {
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed'],
+        ]);
+
+        $user = User::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'organization_join' => $request->organization_join,
+            'password' => Hash::make($request->password),
+            'role' => 'organization',
+            'status' => 'inactive',
+        ]);
+
+        $notification = array(
+            'message' => 'Organization Registered Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('organization.login')->with($notification);
+
+    }// End Method
+
+
+
+
+
 }

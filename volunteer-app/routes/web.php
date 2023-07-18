@@ -82,6 +82,11 @@ require __DIR__.'/auth.php';
 // middleware for rerouting url
 //Admin Dashboard
 
+Route::get('/organization/login', [OrganizationController::class, 'OrganizationLogin'])->name('vendor.login');
+
+Route::get('/register/organization', [OrganizationController::class, 'BecomeVendor'])->name('become.vendor');
+Route::post('/organization/register', [OrganizationController::class, 'VendorRegister'])->name('vendor.register');
+
 Route::middleware(['auth','role:admin'])->group(function() {
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->
     name('admin.dashboard');
@@ -146,7 +151,8 @@ Route::middleware(['auth','role:organization'])->group(function() {
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
 
-Route::get('/organization/login', [OrganizationController::class, 'OrganizationLogin']);
+Route::get('/organization/login', [OrganizationController::class, 'OrganizationLogin'])
+    ->name('organization.login');
 
 // Category All Route
 Route::controller(CategoryController::class)->group(function(){
