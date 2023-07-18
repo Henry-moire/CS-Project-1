@@ -56,9 +56,14 @@ Route::get('/', function () {
 
 Route::get('opportunities', [OpportunitiesController::class, 'index']) -> name('opportunities.search');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth'])->group(function() {
+
+    Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
+
+
+}); // Gorup Milldeware End
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
