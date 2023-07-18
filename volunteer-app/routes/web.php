@@ -56,9 +56,20 @@ Route::get('/', function () {
 
 Route::get('opportunities', [OpportunitiesController::class, 'index']) -> name('opportunities.search');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth'])->group(function() {
+
+    Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
+
+    Route::post('/user/profile/store', [UserController::class,
+        'UserProfileStore'])->name('user.profile.store');
+
+    Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+
+    Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
+
+}); // Group Middleware End
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
