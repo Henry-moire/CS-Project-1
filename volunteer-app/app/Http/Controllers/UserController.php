@@ -46,6 +46,43 @@ class UserController extends Controller
 
     } // End Mehtod
 
+    public function UserLogout(Request $request){
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        $notification = array(
+            'message' => 'User Logout Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/login')->with($notification);
+    } // End Method
+
+    public function UserUpdatePassword(Request $request){
+        // Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+        // Match The Old Password
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+            return back()->with("error", "Old Password Doesn't Match!!");
+        }
+
+        // Update The new password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+
+        ]);
+
+        return back()->with("status", " Password Changed Successfully");
+
+    } // End Method
+
 
 
 
