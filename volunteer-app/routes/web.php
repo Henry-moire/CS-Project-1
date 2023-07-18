@@ -51,7 +51,7 @@ use App\Http\Controllers\OpportunitiesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
 Route::get('opportunities', [OpportunitiesController::class, 'index']) -> name('opportunities.search');
