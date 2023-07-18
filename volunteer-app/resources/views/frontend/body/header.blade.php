@@ -1,9 +1,9 @@
 <!-- Header  -->
 <header class="header-area header-style-1 header-height-2">
-    <div class="mobile-promotion">
+    <!--<div class="mobile-promotion">
         <span>Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left</span>
-    </div>
-    <div class="header-top header-top-ptb-1 d-none d-lg-block">
+    </div>-->
+    <!--<div class="header-top header-top-ptb-1 d-none d-lg-block">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-4">
@@ -53,13 +53,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
         <div class="container">
             <div class="header-wrap">
-                <div class="logo logo-width-1">
+                <!--<div class="logo logo-width-1">
                     <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
-                </div>
+                </div>-->
                 <div class="header-right">
                     <div class="search-style-2">
                         <form action="#">
@@ -102,7 +102,7 @@
                                 </form>
                             </div>
 
-                            <div class="header-action-icon-2">
+                            <!--<div class="header-action-icon-2">
                                 <a href="shop-wishlist.html">
                                     <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-heart.svg') }}" />
                                     <span class="pro-count blue">6</span>
@@ -152,7 +152,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="header-action-icon-2">
                                 <a href="page-account.html">
                                     <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-user.svg') }}" />
@@ -164,18 +164,6 @@
                                     <ul>
                                         <li>
                                             <a href="{{ route('dashboard') }}"><i class="fi fi-rs-user mr-10"></i>My Account</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('dashboard') }}"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('user.logout') }}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
@@ -282,7 +270,7 @@
                         <nav>
                             <ul>
 
-                                <li>
+                                <!--<li>
                                     <a class="active" href="index.html">Home  </a>
 
                                 </li>
@@ -323,7 +311,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li>
                                     <a href="#">Vendors <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
@@ -335,7 +323,7 @@
                                         <li><a href="vendor-guide.html">Vendor Guide</a></li>
                                     </ul>
                                 </li>
-                                <li class="position-static">
+                                <!--<li class="position-static">
                                     <a href="#">Mega menu <i class="fi-rs-angle-down"></i></a>
                                     <ul class="mega-menu">
                                         <li class="sub-mega-menu sub-mega-menu-width-22">
@@ -442,8 +430,8 @@
                 <div class="hotline d-none d-lg-flex">
                     <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-headphone.svg') }}" alt="hotline" />
                     <p>1900 - 888<span>24/7 Support Center</span></p>
-                </div>
-                <div class="header-action-icon-2 d-block d-lg-none">
+                </div>-->
+                <!--<div class="header-action-icon-2 d-block d-lg-none">
                     <div class="burger-icon burger-icon-white">
                         <span class="burger-icon-top"></span>
                         <span class="burger-icon-mid"></span>
@@ -505,7 +493,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </header>
 
 <!-- End Header  -->
