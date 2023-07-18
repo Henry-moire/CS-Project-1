@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 pr-30 d-none d-lg-block">
+                        <!--<div class="col-lg-6 pr-30 d-none d-lg-block">
                             <div class="card-login mt-115">
                                 <a href="#" class="social-login facebook-login">
                                     <img src="assets/imgs/theme/icons/logo-facebook.svg" alt="" />
@@ -95,7 +95,7 @@
                                     <span>Continue with Apple</span>
                                 </a>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
